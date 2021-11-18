@@ -32,10 +32,10 @@ public void keyPressed()
     bob.accelerate(-2);
   if (key == 'e')
   {
-    bob.myCenterX = ((int)(Math.random() * 500));
-    bob.myCenterY = ((int)(Math.random() * 500));
-    bob.setXspeed(0);
-    bob.setYspeed(0);
-    bob.turn(Math.random() * 360);
+    bob.hyperspace();
+  }
+  if (key == 'q')
+  {
+    bob.brake();
   }
 }
