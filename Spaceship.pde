@@ -29,4 +29,17 @@ class Spaceship extends Floater
   {
     myYspeed = n;
   }
+  public void hyperspace()
+  {
+    bob.myCenterX = ((int)(Math.random() * 500));
+    bob.myCenterY = ((int)(Math.random() * 500));
+    bob.setXspeed(0);
+    bob.setYspeed(0);
+    bob.turn(Math.random() * 360);
+  }
+  public void brake()
+  {
+    myXspeed = 0;
+    myYspeed = 0;
+  }
 }
