@@ -1,5 +1,6 @@
 //your variable declarations here
 Spaceship bob = new Spaceship();
+ArrayList <Asteroid> Asteroids = new ArrayList <Asteroid>();
 public void setup() 
 {
   //your code here
@@ -7,6 +8,10 @@ public void setup()
   for (int i = 0; i < sky.length; i++)
   {
     sky[i] = new Star();
+  }
+  for (int i = 0; i < 30; i++)
+  {
+    Asteroids.add(new Asteroid());
   }
 }
 public void draw() 
@@ -18,6 +23,16 @@ public void draw()
   for (int i = 0; i < sky.length; i++)
   {
     sky[i].show();
+  }
+  for (int i = 0; i < Asteroids.size(); i++)
+  {
+    Asteroids.get(i).move();
+    Asteroids.get(i).show();
+    Asteroids.get(i).getMyCenterX();
+    Asteroids.get(i).getMyCenterY();
+    float distance = dist((float)Asteroids.get(i).getMyCenterX(), (float)Asteroids.get(i).getMyCenterY(), (float)bob.getX(), (float)bob.getY());
+    if (distance < 15)
+      Asteroids.remove(i);
   }
 }
 public void keyPressed() 
