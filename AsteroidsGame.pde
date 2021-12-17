@@ -67,7 +67,7 @@ public void keyPressed()
   {
     bob.brake();
   }
-  if (key == ' ')
+  if (key == 'g')
   {
     Bullets.add(new Bullet(bob));
   }
