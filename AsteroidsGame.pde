@@ -10,7 +10,7 @@ public void setup()
   {
     sky[i] = new Star();
   }
-  for (int i = 0; i < 75; i++)
+  for (int i = 0; i < 50; i++)
   {
     Asteroids.add(new Asteroid());
   }
