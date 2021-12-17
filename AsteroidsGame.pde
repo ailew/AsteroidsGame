@@ -35,8 +35,8 @@ public void draw()
   }
   for (int i = 0; i < Bullets.size(); i++)
   {
-    Bullets.get(i).move();
     Bullets.get(i).show();
+    Bullets.get(i).move();
     for (int j = 0; j < Asteroids.size(); j++)
     {
       float distance1 = dist((float)Asteroids.get(j).getMyCenterX(), (float)Asteroids.get(j).getMyCenterY(), (float)Bullets.get(i).getMyCenterX1(), (float)Bullets.get(i).getMyCenterY1());
