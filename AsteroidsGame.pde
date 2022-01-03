@@ -10,7 +10,7 @@ public void setup()
   {
     sky[i] = new Star();
   }
-  for (int i = 0; i < 50; i++)
+  for (int i = 0; i < 75; i++)
   {
     Asteroids.add(new Asteroid());
   }
@@ -35,8 +35,8 @@ public void draw()
   }
   for (int i = 0; i < Bullets.size(); i++)
   {
-    Bullets.get(i).show();
     Bullets.get(i).move();
+    Bullets.get(i).show();
     for (int j = 0; j < Asteroids.size(); j++)
     {
       float distance1 = dist((float)Asteroids.get(j).getMyCenterX(), (float)Asteroids.get(j).getMyCenterY(), (float)Bullets.get(i).getMyCenterX1(), (float)Bullets.get(i).getMyCenterY1());
