@@ -16,7 +16,8 @@ public void draw()
     }
     chan.show();
     chan.move();
-    if(keyPressed){
+}
+    public void keyPressed(){
       if(key == 'w'){
         chan.accelerate(0.1);
       }
@@ -33,4 +34,4 @@ public void draw()
         chan.hyperspace();
       }
     }
-}
+
