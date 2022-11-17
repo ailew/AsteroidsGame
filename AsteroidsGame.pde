@@ -1,8 +1,8 @@
 Spaceship chan = new Spaceship();
-Star[] nightSky = new Star[500];
+Star[] nightSky = new Star[350];
 public void setup() 
 {
-  size(1000,1000);
+  size(500,500);
   for (int i = 0; i < nightSky.length; i++)
   {
     nightSky[i] = new Star();
