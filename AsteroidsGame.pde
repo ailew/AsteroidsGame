@@ -22,13 +22,13 @@ public void draw()
         chan.accelerate(0.1);
       }
       if(key == 'a'){
-        chan.turn(-3);
+        chan.turn(-6);
       }
       if(key == 's'){
         chan.accelerate(-0.1);
       }
       if(key == 'd'){
-        chan.turn(3);
+        chan.turn(6);
       }
       if(key == 'f'){
         chan.hyperspace();
