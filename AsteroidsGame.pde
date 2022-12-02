@@ -9,10 +9,10 @@ public void setup()
     stars[i] = new Star();
   }
   
-    for(int i = 0; i < 14; i++){
-    asteroids.add(new Asteroid());
-    asteroids.get(i).accelerate((int)(Math.random()*2)+1);
-    }
+   // for(int i = 0; i < 14; i++){
+    //asteroids.add(new Asteroid());
+    //asteroids.get(i).accelerate((int)(Math.random()*2)+1);
+    //}
 } // end of setup
 
 public void draw(){ 
@@ -21,12 +21,12 @@ public void draw(){
     stars[i].show();
     }
     
-   for(int i = 0; i < asteroids.size() ; i++){
-   asteroids.get(i).show();
-   asteroids.get(i).move();  
-   float distance = dist(su.getX(), su.getY(), asteroids.get(i).getX(),asteroids.get(i).getY());
-   if (distance < 20)
-   asteroids.remove(i);
+ //  for(int i = 0; i < asteroids.size() ; i++){
+ //  asteroids.get(i).show();
+ //  asteroids.get(i).move();  
+//   float distance = dist(su.getX(), su.getY(), asteroids.get(i).getX(),asteroids.get(i).getY());
+  //if (distance < 20)
+   //asteroids.remove(i);
    }
 
    su.move();
