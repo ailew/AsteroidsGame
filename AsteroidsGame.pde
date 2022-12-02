@@ -21,13 +21,7 @@ public void draw(){
     stars[i].show();
     }
     
-   for(int i = 0; i < asteroids.size() ; i++){
-   asteroids.get(i).show();
-   asteroids.get(i).move();  
-   float distance = dist(su.getX(), su.getY(), asteroids.get(i).getX(),asteroids.get(i).getY());
-   if (distance < 20)
-   asteroids.remove(i);
-   }
+
 
    su.move();
    su.show();
