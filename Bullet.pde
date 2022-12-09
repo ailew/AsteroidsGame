@@ -6,7 +6,7 @@ class Bullet extends Floater
     myXspeed = su.getXspeed();
     myYspeed = su.getYspeed();
     myPointDirection = su.getPointDirection();
-    accelerate(0.6);
+    accelerate(6.0);
   }
   
   public void show(){
