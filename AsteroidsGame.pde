@@ -30,9 +30,12 @@ public void draw() {
   }
 
   for (int i = 0; i < bullets.size(); i++) {
-    for (int j = 0; j < asteroids.size(); j++) {
       bullets.get(i).show();
       bullets.get(i).move();
+  }
+
+  for (int i = 0; i < bullets.size(); i++) {
+    for (int j = 0; j < asteroids.size(); j++) {
       float shot = dist(bullets.get(i).getX(), bullets.get(i).getY(), asteroids.get(j).getX(), asteroids.get(j).getY());
       if (shot <= 20) {
         asteroids.remove(j);
