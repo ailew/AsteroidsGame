@@ -1,5 +1,5 @@
 Spaceship chan = new Spaceship();
-Star [] nightSky = new Star[500];
+Star [] nightSky = new Star[250];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 ArrayList <Bullet> pew = new ArrayList <Bullet>();
 public void setup() 
