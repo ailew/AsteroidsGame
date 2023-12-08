@@ -1,17 +1,32 @@
 Spaceship bob = new Spaceship();
-public void setup(){
- size(1000,1000);
- background(0);
- for(int i = 0; i< spaceSky.length;i++)
+Spaceship man = new Spaceship();
+Star[] spaceSky = new Star[200];
+ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
+
+public void setup() 
+{
+  size(1000,1000);
+  for(int i = 0; i< spaceSky.length;i++)
    spaceSky[i] = new Star();
+  for(int i = 0; i < 10; i++)
+    asteroids.add(new Asteroid());
 }
-public void draw(){
+public void draw() 
+{
   background(0);
-  bob.move();
   bob.show();
+  bob.move();
   for(int i = 0; i< spaceSky.length;i++)
     spaceSky[i].show();
+  for(int i = 0; i < asteroids.size(); i++){
+    asteroids.get(i).show();
+    asteroids.get(i).move();
+    float d = dist((float)bob.myCenterX, (float)bob.myCenterY, (float)asteroids.get(i).myCenterX, (float)asteroids.get(i).myCenterY);
+    if(d < 10)
+      asteroids.remove(i);
+  }
 }
+
 public void keyPressed() {
   if (key == 'a')
     bob.turn(-20);
@@ -25,4 +40,3 @@ public void keyPressed() {
     bob.hyperspace();
 
 }
-
