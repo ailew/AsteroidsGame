@@ -9,7 +9,7 @@ class Bullets extends Floater {
     myYspeed = 5 * Math.sin(dRadians) + ship.myYspeed;
   }
   public void show() {
-    fill(142,154,255);
+    fill(125,235,235);
     noStroke();
     ellipse((float)myCenterX, (float)myCenterY, 7, 7);
   }
@@ -26,3 +26,5 @@ class Bullets extends Floater {
     return (float) myCenterY;
   }
 }
+
+
