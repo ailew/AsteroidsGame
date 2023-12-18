@@ -49,9 +49,3 @@ class Spaceship extends Floater{
     myYspeed = 0.1 * myYspeed;
   }
 }
-
-
-
-
-
-
