@@ -26,7 +26,7 @@ class Asteroid extends Floater{
     myColor = color(147,136,136);
     myPointDirection = 0;
     rotSpeed = (int)(Math.random()*8)+1;
-    myColor = color(255,255,255);
+    myColor = color((int)(Math.random()*255));
     negative = new int []{-1, 1};
     randomSpeed = negative[(int)(Math.random()*negative.length)];
     //System.out.println(randomSpeed);
