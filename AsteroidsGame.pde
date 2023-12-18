@@ -1,7 +1,7 @@
 Spaceship bob = new Spaceship();
 Star[] spaceSky = new Star[200];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
-ArrayList <Bullets> shots = new ArrayList <Bullets>();
+ArrayList <Bullet> shots = new ArrayList <Bullet>();
 public void setup() {
   size(1000,1000);
   for(int i = 0; i< spaceSky.length;i++){
@@ -55,6 +55,6 @@ public void keyPressed() {
   if (key == 'e')
     bob.hyperspace();
    if(key == 'q')
-     shots.add(new Bullets(bob));
+     shots.add(new Bullet(bob));
 
 }
