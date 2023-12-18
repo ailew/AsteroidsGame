@@ -54,7 +54,7 @@ public void keyPressed() {
     bob.brake();
   if (key == 'e')
     bob.hyperspace();
-   if(key == 'q')
+   if(key == ' ')
      shots.add(new Bullets(bob));
 
 }
