@@ -1,74 +1,59 @@
-//your variable declarations here
 Spaceship bob = new Spaceship();
-ArrayList <Asteroid> Asteroids = new ArrayList <Asteroid>();
-ArrayList <Bullet> Bullets = new ArrayList <Bullet>();
-public void setup() 
-{
-  //your code here
-  size(500, 500);
-  for (int i = 0; i < sky.length; i++)
-  {
-    sky[i] = new Star();
-  }
-  for (int i = 0; i < 75; i++)
-  {
-    Asteroids.add(new Asteroid());
+Star[] spaceSky = new Star[200];
+ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
+ArrayList <Bullets> shots = new ArrayList <Bullets>();
+public void setup() {
+  size(1000,1000);
+  for(int i = 0; i< spaceSky.length;i++)
+   spaceSky[i] = new Star();
+  for(int i = 0; i < 50;i++){
+    asteroids.add(new Asteroid());
+    asteroids.get(i).accelerate((int)(Math.random()*2)+1);
   }
 }
 public void draw() 
 {
-  //your code here
   background(0);
   bob.show();
   bob.move();
-  for (int i = 0; i < sky.length; i++)
-  {
-    sky[i].show();
+   for(int i = 0; i< spaceSky.length;i++)
+    spaceSky[i].show();
+  for(int i = 0; i < asteroids.size(); i++){
+    asteroids.get(i).show();
+    asteroids.get(i).move();
+    float d = dist((float)bob.myCenterX, (float)bob.myCenterY, (float)asteroids.get(i).myCenterX, (float)asteroids.get(i).myCenterY);
+    if(d <10)
+      asteroids.remove(i);
   }
-  for (int i = 0; i < Asteroids.size(); i++)
-  {
-    Asteroids.get(i).move();
-    Asteroids.get(i).show();
-    float distance = dist((float)Asteroids.get(i).getMyCenterX(), (float)Asteroids.get(i).getMyCenterY(), (float)bob.getX(), (float)bob.getY());
-    if (distance < 15)
-      Asteroids.remove(i);
+  for (int i = 0; i < shots.size(); i++) {
+    shots.get(i).move();
+    shots.get(i).show();
   }
-  for (int i = 0; i < Bullets.size(); i++)
-  {
-    Bullets.get(i).move();
-    Bullets.get(i).show();
-    for (int j = 0; j < Asteroids.size(); j++)
-    {
-      float distance1 = dist((float)Asteroids.get(j).getMyCenterX(), (float)Asteroids.get(j).getMyCenterY(), (float)Bullets.get(i).getMyCenterX1(), (float)Bullets.get(i).getMyCenterY1());
-      if (distance1 < 15)
-      {
-        Asteroids.remove(j);
-        Bullets.remove(i);
-        break;
-      }
+  for (int i = 0; i < shots.size(); i++) {
+    for(int j = 0;j < asteroids.size(); j++){
+      float d2 = dist((float)shots.get(i).myCenterX, (float)shots.get(i).myCenterY,(float)asteroids.get(j).myCenterX, (float)asteroids.get(j).myCenterY);
+      if(d2 < 18)
+          asteroids.remove(i);
+          shots.remove(i);      
+          break;
     }
   }
 }
-public void keyPressed() 
-{
+
+public void keyPressed() {
   if (key == 'a')
-    bob.turn(-20);
+    bob.turn(-4);
   if (key == 'd')
-    bob.turn(20);
+    bob.turn(4);
   if (key == 'w')
-    bob.accelerate(3);
+    bob.accelerate(0.6);
   if (key == 's')
-    bob.accelerate(-2);
-  if (key == 'e')
-  {
-    bob.hyperspace();
-  }
-  if (key == 'q')
-  {
     bob.brake();
-  }
-  if (key == ' ')
-  {
-    Bullets.add(new Bullet(bob));
-  }
+  if (key == 'e')
+    bob.hyperspace();
+   if(key == 'q')
+     shots.add(new Bullets(bob));
+
 }
+
+
