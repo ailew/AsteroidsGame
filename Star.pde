@@ -1,4 +1,3 @@
-Star[] spaceSky = new Star[200];
 class Star{
  private int myX, myY;
  public Star(){
@@ -9,3 +8,4 @@ class Star{
   ellipse(myX,myY,3,3);
  }
 }
+
