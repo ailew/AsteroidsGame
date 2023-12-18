@@ -1,6 +1,6 @@
-class bullet extends Floater {
+class Bullet extends Floater {
   private float dRadians;
-  public bullet(Spaceship ship) {
+  public Bullet(Spaceship ship) {
     myCenterX = ship.myCenterX;
     myCenterY = ship.myCenterY;
     dRadians = (float) (ship.myPointDirection * (Math.PI/180));
