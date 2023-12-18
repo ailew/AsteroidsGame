@@ -26,11 +26,3 @@ class Bullets extends Floater {
     return (float) myCenterY;
   }
 }
-
-
-
-
-
-
-
-
