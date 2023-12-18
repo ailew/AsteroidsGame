@@ -11,8 +11,7 @@ public void setup() {
     asteroids.get(i).accelerate((int)(Math.random()*2)+1);
   }
 }
-public void draw() 
-{
+public void draw() {
   background(0);
   bob.show();
   bob.move();
@@ -29,14 +28,14 @@ public void draw()
     shots.get(i).move();
     shots.get(i).show();
   }
-  for (int i = 0; i < shots.size(); i++) {
+  for (int i = 0; i < shots.size(); i++){
     for(int j = 0;j < asteroids.size(); j++){
       float d2 = dist((float)shots.get(i).myCenterX, (float)shots.get(i).myCenterY,(float)asteroids.get(j).myCenterX, (float)asteroids.get(j).myCenterY);
       if(d2 < 18)
           asteroids.remove(i);
           shots.remove(i);      
           break;
-     }
+    }
   }
 }
 
